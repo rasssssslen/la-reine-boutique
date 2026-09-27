@@ -34,3 +34,6 @@ const server=http.createServer(async(req,res)=>{
  }catch(e){json(res,500,{error:e.message})}
 });
 server.listen(3000,()=>console.log("La Reine: http://localhost:3000"));
+server.listen(process.env.PORT || 3000, "0.0.0.0", () => {
+  console.log(`La Reine: http://0.0.0.0:${process.env.PORT || 3000}`);
+});
